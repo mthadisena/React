@@ -21,11 +21,12 @@ var Comment = React.createClass({
 
 var CommentList = React.createClass({
     render: function () {
-        var commentNodes = this.props.data.map(function (comment) {
+        var commentNodes = this.props.data.map(function (comment, index) {
+            index++;
             return (
-              <Comment author={comment.Author}>
-          {comment.Text}
-        </Comment>
+                <Comment key={index} author={comment.Author}>
+                    {comment.Text}
+                </Comment>
       );
     });
         return (
